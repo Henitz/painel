@@ -37,11 +37,10 @@ import plotly.express as px
 import streamlit as st
 import painel34
 
-
 # Criação de um componente HTML personalizado para dividir a tela
 
 # Criando dois painéis na mesma linha
-col1, col2 = st.columns([2,1])
+col1, col2 = st.columns([2, 1])
 
 with col1:
     st.write("# Painel 1")
@@ -82,7 +81,7 @@ with col1:
 
     # Definindo guias
     tabs = ["Visão Geral", "Pontos-chave", "Utilização do Prophet", "Sobre o Autor"]
-    selected_tab = st.sidebar.radio("Escolha uma guia:", tabs)
+    selected_tab = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_for_tabs_radio")
 
     # Conteúdo das guias
     tab_contents = {
@@ -214,5 +213,3 @@ with col2:
 
         else:
             st.warning("O arquivo não foi carregado corretamente ou não possui as colunas esperadas.")
-
-

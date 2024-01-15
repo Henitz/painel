@@ -9,7 +9,7 @@ import streamlit as st
 import projeto
 
 
-def painel34(df,data_selecionada, hora_selecionada):
+def painel34(df, data_selecionada, hora_selecionada):
     # Criando dois painéis na mesma linha
     col3, col4 = st.columns(2)
 
@@ -52,7 +52,7 @@ def painel34(df,data_selecionada, hora_selecionada):
             )
             # Definindo guias
             tabs = ["Conceitos", "MAE", "MAPE", "RMSE", "Acurácia"]
-            selected_tab = st.sidebar.radio("Escolha uma métrica:", tabs)
+            selected_tab = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_for_radio_painel34")
 
             # Conteúdo das guias
             tab_contents = {
@@ -120,5 +120,3 @@ def painel34(df,data_selecionada, hora_selecionada):
                 st.write(f"Valor previsto para {data2}: {rounded_x}")
         flag = True
         prevel_model.prevendo(projeto.df, data2)
-
-
