@@ -305,9 +305,8 @@ with col4:
     """
     ### Passo 3: Previsão no Intervalo 01/01/2024 a 31/01/2024  
     """
-
     flag = False
-    data = st.slider('data', 1, 31, 1)
+    data = st.slider('Data', 1, 31, 1)
     if data <= 9:
         data2 = '2024-01-0' + str(data)
     else:
