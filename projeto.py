@@ -81,7 +81,7 @@ with col1:
 
     # Definindo guias
     tabs = ["Visão Geral", "Pontos-chave", "Utilização do Prophet", "Sobre o Autor"]
-    selected_tab = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_for_tabs_radio")
+    selected_tab = st.sidebar.radio("Escolha uma guia:", tabs)
 
     # Conteúdo das guias
     tab_contents = {
