@@ -39,7 +39,7 @@ import streamlit as st
 # Criação de um componente HTML personalizado para dividir a tela
 
 # Criando dois painéis na mesma linha
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([2,1])
 
 with col1:
     st.write("# Painel 1")
@@ -219,7 +219,6 @@ with col3:
     # Adicione o conteúdo do Painel 3 aqui
 
     if uploaded_file is not None and not df.empty and 'ds' in df.columns:
-
         """
         ### Passo 2: Modelo
         """
@@ -231,7 +230,7 @@ with col3:
                     max-width: 80%;
                     justify-content: center;
                 }
-    
+
                 .custom-container {
                     border: 2px solid black;
                     border-radius: 5px;
@@ -240,7 +239,7 @@ with col3:
                     text-align: justify;
                     margin: 20px 0;
                 }
-    
+
                 .nested-container {
                     border: 2px solid black;
                     border-radius: 5px;
@@ -258,95 +257,70 @@ with col3:
 
         # Conteúdo das guias
         tab_contents = {
-
             "Conceitos": """
                 <div class="nested-container">
                 <h6><strong>Conceitos</strong></h6>
                 <p><strong>MAE (Mean Absolute Error)</strong>: Representa a média das diferenças absolutas entre as previsões e os valores reais. Indica o quão perto as previsões estão dos valores reais, sem considerar a direção do erro.</p>
-                <p><strong>MSE (Mean Squared Error)</strong>: É a média das diferenças quadradas entre as previsões e os valores reais. Penaliza erros maiores mais significativamente que o MAE, devido ao termo quadrático, o que torna o MSE mais sensível a outliers.</p>
-                <p><strong>RMSE (Root Mean Squared Error)</strong>: É a raiz quadrada do MSE. Apresenta o mesmo tipo de informação que o MSE, mas na mesma unidade que os dados originais, o que facilita a interpretação.</p>
-                <p><strong>MAPE (Mean Absolute Percentage Error)</strong>: É uma métrica usada para avaliar a precisão de um modelo de previsão em relação ao tamanho dos erros em termos percentuais. Essa métrica calcula a média dos valores absolutos dos erros percentuais entre os valores reais e os valores previstos.</p>
+                ...
                 </div>
                 """,
-
             "MAE": """
-            <div class="nested-container">
-                <h6>MAE</h6>
-                <p>O valor do MAE, como qualquer métrica de erro, depende muito do contexto e da escala dos dados que você está considerando. No contexto do mercado de ações, um MAE de 12,06 pontos pode ser considerado alto ou baixo dependendo do valor médio dos índices ou ativos que você está analisando.</p>
-                <p>Se o índice ou ativo em questão tem uma faixa de valores geralmente baixa (por exemplo, entre 100 e 200 pontos), um MAE de 12,06 pode ser considerado significativo, representando uma porcentagem considerável dessa faixa.</p>
-                <p>Por outro lado, se o índice ou ativo tem valores muito mais altos (por exemplo, entre 1000 e 2000 pontos), um MAE de 12,06 pode ser relativamente pequeno.</p>
-                <p>O importante é contextualizar esse valor em relação à escala dos dados que está sendo analisada e considerar como ele se compara a outros modelos ou análises similares. Em geral, um MAE mais baixo indica um melhor desempenho do modelo em prever os valores reais.</p>
-            </div>
-            """,
+                <div class="nested-container">
+                    <h6>MAE</h6>
+                    <p>O valor do MAE, como qualquer métrica de erro, depende muito do contexto e da escala dos dados que você está considerando. No contexto do mercado de ações, um MAE de 12,06 pontos pode ser considerado alto ou baixo dependendo do valor médio dos índices ou ativos que você está analisando.</p>
+                    ...
+                </div>
+                """,
             "MAPE": """
-            <div class="nested-container">
-                <h6><strong>MAPE</strong></h6>
-                <p>Para a bolsa de valores, 11,65% é um valor razoável?</p>
-                <p>Para a bolsa de valores, um MAPE de 11,65% pode ser considerado relativamente alto em muitos contextos devido à sensibilidade e à volatilidade desse ambiente. No entanto, no mundo da previsão financeira e de ações, avaliar se um MAPE de 11,65% é considerado aceitável ou não depende de diversos fatores:</p>
-                <ul>
-                    <li><strong>Horizonte de Tempo:</strong> O MAPE pode variar dependendo do horizonte de tempo das previsões. Em curtos períodos de tempo, como previsões intra-diárias,
-                    </li>
-                    <li><strong>Instrumento Financeiro:</strong> Diferentes tipos de ativos (ações, commodities, moedas) podem ter comportamentos diferentes. Algumas ações podem ser mais voláteis e imprevisíveis do que outras.</li>
-                    <li><strong>Estratégia de Negociação:</strong> O MAPE aceitável pode variar de acordo com a estratégia de negociação. Para um investidor de longo prazo, um MAPE mais alto pode ser tolerável, enquanto para traders de curto prazo, pode ser considerado menos aceitável.</li>
-                    <li><strong>Comparação com Referências:</strong> É útil comparar o MAPE obtido com o desempenho de outros modelos de previsão ou com benchmarks do mercado financeiro para avaliar sua eficácia relativa.</li>
-                    <li><strong>Consequências Financeiras:</strong> Avalie as consequências financeiras do MAPE. Mesmo que 11,65% pareça alto, se as previsões permitirem tomar decisões lucrativas ou reduzir perdas, pode ser aceitável.</
-                    </li>
-                </ul>
-                <p>Em geral, para muitos investidores e analistas da bolsa de valores, um MAPE de 11,65% poderia ser considerado relativamente alto, especialmente se a precisão das previsões for crucial para estratégias de negociação específicas. Contudo, é crucial contextualizar o MAPE dentro das especificidades do mercado financeiro e considerar outros indicadores e métricas ao avaliar a eficácia das previsões.</p>
-            </div>
-            """,
+                <div class="nested-container">
+                    <h6><strong>MAPE</strong></h6>
+                    <p>Para a bolsa de valores, 11,65% é um valor razoável?</p>
+                    ...
+                </div>
+                """,
             "RMSE": """
-            <div class="nested-container">
-                <h6><strong>RMSE</strong></h6>
-                <p>Em muitos casos envolvendo previsão na bolsa de valores, um RMSE de 11,65 pode ser considerado alto, especialmente se estiver lidando com a previsão de preços de ações individuais ou ativos específicos. No contexto financeiro, pequenas diferenças nas previsões podem ter um impacto significativo nos resultados e nas decisões de investimento.</p>
-                <p>Um RMSE de 11,65 indicaria que, em média, as previsões estão a cerca de 11,65 unidades de distância dos valores reais. Para muitos investidores e analistas financeiros, essa margem de erro pode ser considerada grande, especialmente ao lidar com investimentos de curto prazo ou estratégias de trading onde a precisão é crucial.</p>
-                <p>Portanto, para previsões na bolsa de valores, é comum buscar valores de erro menores, indicando uma maior precisão nas previsões. Um RMSE de 11,65 pode ser visto como relativamente alto, sugerindo a necessidade de melhorias no modelo para tornar as previsões mais precisas e confiáveis.</p>
-            </div>
-            """,
+                <div class="nested-container">
+                    <h6><strong>RMSE</strong></h6>
+                    <p>Em muitos casos envolvendo previsão na bolsa de valores, um RMSE de 11,65 pode ser considerado alto, especialmente se estiver lidando com a previsão de preços de ações individuais ou ativos específicos...</p>
+                    ...
+                </div>
+                """,
             "Acurácia": """
-            <div class="nested-container">
-                <h6><strong>Acurácia</strong></h6>
-                <p>
-                    Em modelos de séries temporais, o conceito de "acurácia" não é tão direto quanto em modelos de classificação, onde se pode calcular a precisão de forma direta. A acurácia em modelos de séries temporais pode ser interpretada de maneira diferente, pois envolve a capacidade do modelo de fazer previsões precisas sobre pontos futuros desconhecidos.
-                </p>
-                <p>
-                    Em vez de usar termos como "acurácia", normalmente são utilizadas métricas específicas, como as mencionadas anteriormente (MAE, RMSE, MAPE, entre outras), para descrever o quão próximas as previsões do modelo estão dos valores reais.
-                </p>
-                <p>
-                    Então, dizer que um modelo de série temporal tem uma precisão de 70% pode não ser a maneira mais comum de descrever seu desempenho. Em vez disso, seria mais informativo dizer algo como "o modelo tem um RMSE de 10", o que indica uma certa magnitude média de erro entre as previsões e os valores reais, ou "o modelo tem um MAPE de 5%", o que mostra a média dos erros percentuais das previsões.
-                </p>
-                <p>
-                    Traduzir a performance de um modelo de séries temporais em uma única medida de "acurácia" pode não capturar completamente sua eficácia, já que esses modelos são geralmente avaliados por meio de várias métricas, cada uma fornecendo uma perspectiva diferente do desempenho do modelo.
-                </p>
-            </div>
-            """
+                <div class="nested-container">
+                    <h6><strong>Acurácia</strong></h6>
+                    <p>Em modelos de séries temporais, o conceito de "acurácia" não é tão direto quanto em modelos de classificação, onde se pode calcular a precisão de forma direta...</p>
+                    ...
+                </div>
+                """
         }
 
         # Exibindo o conteúdo da guia selecionada
         st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
-    with col4:
-        st.write("# Painel 4")
-        # Adicione o conteúdo do Painel 3 aqui
 
-        """
-        ### Passo 3: Previsão no Intervalo 01/01/2024 a 31/01/2024  
-        """
+with col4:
+    st.write("# Painel 4")
+    # Adicione o conteúdo do Painel 3 aqui
 
-        flag = False
-        data = st.slider('Data', 1, 31, 1)
-        if data <= 9:
-            data2 = '2024-01-0' + str(data)
+    """
+    ### Passo 3: Previsão no Intervalo 01/01/2024 a 31/01/2024  
+    """
+
+    flag = False
+    data = st.slider('Data', 1, 31, 1)
+    if data <= 9:
+        data2 = '2024-01-0' + str(data)
+    else:
+        data2 = '2024-01-' + str(data)
+
+    btn = st.button("Previsão")
+
+    if btn:
+        x = prevel_model.prevendo(df, data2, flag)
+        if x is None:
+            st.write(f"A data {data2} não está disponível nas previsões ou é feriado/final de semana.")
         else:
-            data2 = '2024-01-' + str(data)
+            rounded_x = round(x, 3)
+            st.write(f"Valor previsto para {data2}: {rounded_x}")
+    flag = True
+    prevel_model.prevendo(df, data)
 
-        btn = st.button("Previsão")
-
-        if btn:
-            x = prevel_model.prevendo(df, data2, flag)
-            if x is None:
-                st.write(f"A data {data2} não está disponível nas previsões ou é feriado/final de semana.")
-            else:
-                rounded_x = round(x, 3)
-                st.write(f"Valor previsto para {data2}: {rounded_x}")
-        flag = True
-        prevel_model.prevendo(df, data)
