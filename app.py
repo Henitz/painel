@@ -37,7 +37,7 @@ if not os.path.exists(temp_dir):
     os.makedirs(temp_dir)
 
 # URL do arquivo ZIP no GitHub
-zip_url = "https://github.com/Henitz/challenge2/raw/master/data/app.zip"
+zip_url = "https://github.com/Henitz/painel/raw/master/data/app.zip"
 
 # Obtendo o conteúdo do arquivo ZIP
 zip_content = requests.get(zip_url).content
