@@ -7,9 +7,6 @@ def prevendo(df2, data1, flag=True):
     from prophet import Prophet
     import pandas as pd
 
-    if 'ds' not in df2.columns:
-        df2['ds'] = pd.to_datetime(df2['Data'], format='%d.%m.%Y')  # Adjust column name if needed
-
     # Criando o modelo Prophet
     feriados_sp = pd.DataFrame({
         'holiday': 'feriados_sp',
@@ -52,8 +49,3 @@ def prevendo(df2, data1, flag=True):
         return yhat_period
     else:
         return None
-
-
-
-
-
