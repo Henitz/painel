@@ -132,7 +132,7 @@ with col1:
     }
 
     # Renderizar conteúdo da guia selecionada
-    st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
+    st.markdown(tab_contents[selected_tab_projeto], unsafe_allow_html=True)
 
 with col2:
     st.write("# Painel 2")

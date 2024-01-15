@@ -54,7 +54,6 @@ def painel34(df, data_selecionada, hora_selecionada):
             tabs = ["Conceitos", "MAE", "MAPE", "RMSE", "Acurácia"]
             selected_tab_painel34 = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_painel34")
 
-
             # Conteúdo das guias
             tab_contents = {
                 "Conceitos": """
@@ -95,7 +94,7 @@ def painel34(df, data_selecionada, hora_selecionada):
             }
 
             # Exibindo o conteúdo da guia selecionada
-            st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
+            st.markdown(tab_contents[selected_tab_painel34], unsafe_allow_html=True)
     with col4:
         st.write("# Painel 4")
         # Adicione o conteúdo do Painel 3 aqui
