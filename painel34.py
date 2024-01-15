@@ -52,7 +52,8 @@ def painel34(df, data_selecionada, hora_selecionada):
             )
             # Definindo guias
             tabs = ["Conceitos", "MAE", "MAPE", "RMSE", "Acurácia"]
-            selected_tab = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_for_radio_painel34")
+            selected_tab_painel34 = st.sidebar.radio("Escolha uma guia:", tabs, key="unique_key_painel34")
+
 
             # Conteúdo das guias
             tab_contents = {
