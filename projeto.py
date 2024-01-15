@@ -297,6 +297,7 @@ with col3:
         # Exibindo o conteúdo da guia selecionada
         st.markdown(tab_contents[selected_tab], unsafe_allow_html=True)
 
+
 with col4:
     st.write("# Painel 4")
     # Adicione o conteúdo do Painel 3 aqui
@@ -306,7 +307,7 @@ with col4:
     """
 
     flag = False
-    data = st.slider('Data', 1, 31, 1)
+    data = st.slider('data', 1, 31, 1)
     if data <= 9:
         data2 = '2024-01-0' + str(data)
     else:
